@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+						http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+						http://www.springframework.org/schema/mvc
+						http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+						http://www.springframework.org/schema/context 
+						http://www.springframework.org/schema/context/spring-context-3.0.xsd
+						http://www.springframework.org/schema/util 
+						http://www.springframework.org/schema/util/spring-util.xsd">
+
+
+	<!-- 自动扫描组件，可以写多个。 -->
+	<context:component-scan base-package="com.wjs.member.**.controller.**" />
+	<!-- 定义直接找到视图文件的路径 -->
+	<bean name="/**/*.html" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"> 
+	</bean> 
+	
+	<!-- <mvc:annotation-driven /> 是一种简写形式，完全可以手动配置替代这种简写形式，会自动注册 DefaultAnnotationHandlerMapping与AnnotationMethodHandlerAdapter 
+		两个bean, 是spring MVC为@Controllers分发请求所必须的。 -->
+	<mvc:annotation-driven />
+	<!-- 配置js,css等静态文件直接映射到对应的文件夹，不被DispatcherServlet处理 若将以下改为：<mvc:default-servlet-handler 
+		/>则使用默认的Servlet来响应静态文件 -->
+	<mvc:resources mapping="/favicon.ico" location="/favicon.ico" />
+	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/**/*.htm" location="/" />
+
+	<!-- 不登录也能访问的页面
+	<bean id="logonInterceptor" class="com.wjs.schedule.web.interceptor.LogonInterceptor">
+		
+		<property name="excludeUrls">
+			<list>
+				<value>/favicon.ico</value>
+				<value>/logon*</value>
+			</list>
+		</property>
+	</bean>
+ 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping path="/static/**" />
+			<ref bean="logonInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	-->
+
+
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+		<property name="templateLoaderPath" value="/WEB-INF/template/" />
+		<property name="freemarkerSettings">
+			<bean
+				class="org.springframework.beans.factory.config.PropertiesFactoryBean">
+				<property name="location" value="classpath:freemarker.properties" />
+			</bean>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.freemarker.FreeMarkerView" />
+		<property name="prefix" value="" />
+		<property name="suffix" value=".ftl" />
+		<property name="contentType" value="text/html;charset=UTF-8" />
+		<property name="exposeSpringMacroHelpers" value="true" />
+		<property name="exposeRequestAttributes" value="true" />
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="requestContextAttribute" value="request" />
+		<property name="cache" value="true" />
+		<property name="order" value="0" />
+	</bean>
+
+	<bean id="exceptionResolver" class="com.wjs.member.common.web.MappingExceptionResolver" />
+
+</beans>	
