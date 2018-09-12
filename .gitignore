@@ -1,0 +1,6 @@
+/toolplat-service/*.project
+/toolplat-service/*
+/toolplat-service/*.classpath
+/toolplat-web/*.project
+/toolplat-web/*
+/toolplat-web/*.classpath
