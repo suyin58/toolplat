@@ -4,3 +4,5 @@
 /toolplat-web/*.project
 /toolplat-web/*
 /toolplat-web/*.classpath
+/.idea/
+/com.toolplat.iml
