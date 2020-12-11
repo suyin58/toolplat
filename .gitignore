@@ -1,8 +1,17 @@
-/toolplat-service/*.project
-/toolplat-service/*
-/toolplat-service/*.classpath
-/toolplat-web/*.project
-/toolplat-web/*
-/toolplat-web/*.classpath
-/.idea/
-/com.toolplat.iml
+Thumbs.db
+.DS_Store
+.gradle
+build/
+out/
+.idea
+*.iml
+*.ipr
+*.iws
+.project
+.settings
+.classpath
+/toolplat-example/target/
+/gradle/
+/toolplat-common/target/
+/toolplat-web/target/
+x s

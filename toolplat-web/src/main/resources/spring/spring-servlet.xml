@@ -14,7 +14,7 @@
 
 
 	<!-- 自动扫描组件，可以写多个。 -->
-	<context:component-scan base-package="com.wjs.member.**.controller.**" />
+	<context:component-scan base-package="com.toolplat.deduct" />
 	<!-- 定义直接找到视图文件的路径 -->
 	<bean name="/**/*.html" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"> 
 	</bean> 
@@ -29,7 +29,7 @@
 	<mvc:resources mapping="/**/*.htm" location="/" />
 
 	<!-- 不登录也能访问的页面
-	<bean id="logonInterceptor" class="com.wjs.schedule.web.interceptor.LogonInterceptor">
+	<bean id="logonInterceptor" class="com.toolplat.schedule.web.interceptor.LogonInterceptor">
 		
 		<property name="excludeUrls">
 			<list>
@@ -75,6 +75,6 @@
 		<property name="order" value="0" />
 	</bean>
 
-	<bean id="exceptionResolver" class="com.wjs.member.common.web.MappingExceptionResolver" />
+	<bean id="exceptionResolver" class="com.toolplat.deduct.common.web.MappingExceptionResolver" />
 
 </beans>	

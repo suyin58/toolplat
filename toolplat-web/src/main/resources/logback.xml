@@ -107,36 +107,36 @@
     </appender>
 
 
-    <logger name="com.wjs.dubbo-demo" additivity="false">
+    <logger name="com.toolplat.dubbo-demo" additivity="false">
         <level value="INFO" />
         <appender-ref ref="lbcAppender" />
         <appender-ref ref="lbcErrorAppender" />
     </logger>
 
-    <logger name="com.wjs.dubbo-demo.dao.plugin.LbcMybatisInterceptor" additivity="false">
+    <logger name="com.toolplat.dubbo-demo.dao.plugin.LbcMybatisInterceptor" additivity="false">
         <level value="INFO" />
         <appender-ref ref="sqlAppender" />
     </logger>
     
-    <logger name="com.wjs.common.utils.SimpleMethodInterceptor" additivity="false">
+    <logger name="com.toolplat.common.utils.SimpleMethodInterceptor" additivity="false">
         <level value="INFO" />
         <appender-ref ref="serviceAppender" />
         <appender-ref ref="lbcErrorAppender" />
     </logger>
-    <logger name="com.wjs.sso.common.utils.SimpleExecutorAspect" additivity="false">
+    <logger name="com.toolplat.sso.common.utils.SimpleExecutorAspect" additivity="false">
         <level value="INFO" />
         <appender-ref ref="serviceAppender" />
         <appender-ref ref="lbcErrorAppender" />
     </logger>
     
-    <logger name="com.wjs.dubbo-demo.common.interceptors.SecurityInterceptor" additivity="false">
+    <logger name="com.toolplat.dubbo-demo.common.interceptors.SecurityInterceptor" additivity="false">
         <level value="INFO" />
         <appender-ref ref="requestAppender" />
     </logger>
 
 	 
     <!-- Dubbo 服务调用日志拦截 --> 
-    <logger name="com.wjs.common.filter.DubboInvokeFilter" additivity="false">
+    <logger name="com.toolplat.common.filter.DubboInvokeFilter" additivity="false">
         <level value="INFO" />
         <appender-ref ref="serviceAppender" />
         <appender-ref ref="lbcErrorAppender" />
