@@ -18,7 +18,7 @@
         <mockito-all.version>1.10.19</mockito-all.version>
         <mybatis-starter.version>1.3.5</mybatis-starter.version>
         <maven-antrun.version>1.8</maven-antrun.version>
-        <spring.version>5.2.2.RELEASE</spring.version>
+        <spring.version>5.3.19</spring.version>
         <spring-boot.version>1.5.22.RELEASE</spring-boot.version>
         <jacoco.version>0.8.5</jacoco.version>
         <surefire.version>2.22.2</surefire.version>
